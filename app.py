@@ -1,11 +1,12 @@
-file_name = str(input())
+print("Enter Filename: ")
+file_name = input()
 lookup = {}
 
 
 def studentScores(fileName):
 
     # File operations
-    file = open("./data/" + file_name, "r")
+    file = open("./data/" + fileName, "r")
 
     for line in file.readlines():
         keys = line.split(',')
@@ -22,3 +23,6 @@ def studentScores(fileName):
         }})
 
     print(lookup)
+
+
+studentScores(file_name)
