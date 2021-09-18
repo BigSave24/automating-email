@@ -1,3 +1,6 @@
+import smtplib
+import random
+
 print("Enter Filename: ")
 file_name = input()
 lookup = {}
@@ -23,6 +26,16 @@ def studentScores(fileName):
         }})
 
     print(lookup)
+    randomStudent(lookup)
+
+
+def randomStudent(studentData):
+    emailList = [x for x in studentData.keys()]
+    idx = random.randint(0, len(emailList))
+
+    print(emailList)
+    print(emailList[idx])
+    return emailList[idx]
 
 
 studentScores(file_name)
